@@ -1,7 +1,7 @@
-# Run Ruff formatter on commits.
-repos:
-  - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.9.10
-    hooks:
-      - id: ruff
-      - id: ruff-format
+feeder:
+  name: Archive_test
+  sheet_id: 1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I/edit?gid=0#gid=0    
+
+storage:
+  name: ARCHIVE_TEST
+  folder_id: 1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q
