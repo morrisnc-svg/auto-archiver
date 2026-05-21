@@ -1,0 +1,27 @@
+name: Run Auto Archiver
+
+on:
+  workflow_dispatch: # Allows you to click the manual "Run workflow" button
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Auto Archiver
+        run: |
+          pip install --upgrade pip
+          pip install auto-archiver
+
+      - name: Execute Archiver Run
+        env:
+          GOOGLE_CRD: ${{ secrets.GOOGLE_CRD }}
+        run: |
+          auto-archiver --config orchestration.yaml
