@@ -20,14 +20,14 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y ffmpeg
 
-      - name: Install Auto Archiver
+      - name: Install Auto Archiver & Playwright Core
         run: |
           pip install --upgrade pip
-          pip install auto-archiver
+          pip install auto-archiver playwright
 
-      - name: Install Browser Dependencies for Screenshots
+      - name: Install Automated Browser & OS Dependencies
         run: |
-          playwright install-deps
+          python -m playwright install --with-deps chromium
 
       - name: Create Google Credentials File
         run: |
