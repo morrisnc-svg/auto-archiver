@@ -1,0 +1,7 @@
+feeder:
+  name: gsheet_feeder
+  sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
+
+storage:
+  name: google_drive_storage
+  folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
