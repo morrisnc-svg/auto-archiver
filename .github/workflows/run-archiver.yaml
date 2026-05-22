@@ -15,6 +15,11 @@ jobs:
         with:
           python-version: '3.10'
 
+      - name: Install System Dependencies (ffmpeg)
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ffmpeg
+
       - name: Install Auto Archiver
         run: |
           pip install --upgrade pip
