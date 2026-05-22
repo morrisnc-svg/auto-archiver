@@ -5,3 +5,9 @@ feeder:
 storage:
   name: google_drive_storage
   folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
+
+# This section tells the newer engine what tasks to perform on the links
+steps:
+  extractors:
+    - name: yt_dlp_extractor
+    - name: screenshot_extractor
