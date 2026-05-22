@@ -1,21 +1,20 @@
 steps:
   feeders:
-    - name: gsheet_feeder_db
-      sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
-
+    - gsheet_feeder_db
   extractors:
-    - name: yt_dlp_extractor
-    - name: screenshot_extractor
-
+    - generic_extractor
   enrichers:
-    - name: hash_enricher
-
+    - hash_enricher
+    - screenshot_enricher
   formatters:
-    - name: html_formatter
-
+    - html_formatter
   databases:
-    - name: gsheet_feeder_db
-
+    - gsheet_feeder_db
   storages:
-    - name: google_drive_storage
-      folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
+    - gdrive_storage
+
+gsheet_feeder_db:
+  sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
+
+gdrive_storage:
+  folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
