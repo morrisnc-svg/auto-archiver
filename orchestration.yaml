@@ -1,6 +1,6 @@
 steps:
   feeders:
-    - name: gsheet_feeder
+    - name: gsheet_feeder_db
       sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
 
   extractors:
@@ -9,6 +9,9 @@ steps:
 
   enrichers:
     - name: hash_enricher
+
+  databases:
+    - name: gsheet_feeder_db
 
   storages:
     - name: google_drive_storage
