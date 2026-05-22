@@ -1,7 +1,7 @@
 name: Run Auto Archiver
 
 on:
-  workflow_dispatch: # Allows you to click the manual "Run workflow" button
+  workflow_dispatch:
 
 jobs:
   archive:
@@ -20,8 +20,12 @@ jobs:
           pip install --upgrade pip
           pip install auto-archiver
 
+      - name: Create Google Credentials File
+        run: |
+          cat << 'EOF' > google_creds.json
+          ${{ secrets.GOOGLE_CRD }}
+          EOF
+
       - name: Execute Archiver Run
-        env:
-          GOOGLE_CRD: ${{ secrets.GOOGLE_CRD }}
         run: |
           auto-archiver --config orchestration.yaml
