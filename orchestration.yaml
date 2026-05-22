@@ -11,12 +11,11 @@ steps:
   databases:
     - gsheet_feeder_db
   storages:
-    - gdrive_storage
+    - local_storage
 
 gsheet_feeder_db:
   sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
   service_account: "google_creds.json"
 
-gdrive_storage:
-  root_folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
-  service_account: "google_creds.json"
+local_storage:
+  output_dir: "archive_downloads"
