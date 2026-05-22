@@ -25,6 +25,10 @@ jobs:
           pip install --upgrade pip
           pip install auto-archiver
 
+      - name: Install Browser Dependencies for Screenshots
+        run: |
+          playwright install-deps
+
       - name: Create Google Credentials File
         run: |
           cat << 'EOF' > google_creds.json
