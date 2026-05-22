@@ -1,22 +1,31 @@
-steps:
-  feeders:
-    - gsheet_feeder_db
-  extractors:
-    - generic_extractor
-  enrichers:
-    - hash_enricher
-    - screenshot_enricher
-  formatters:
-    - html_formatter
-  databases:
-    - gsheet_feeder_db
-  storages:
-    - gdrive_storage
+name: Run Auto Archiver
 
-gsheet_feeder_db:
-  sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
-  service_account: "google_creds.json"
+on:
+  workflow_dispatch:
 
-gdrive_storage:
-  root_folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
-  service_account: "google_creds.json"
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository code
+        uses: actions/checkout@v4
+
+      - name: Set up Python environment
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install Auto Archiver
+        run: |
+          pip install --upgrade pip
+          pip install auto-archiver
+
+      - name: Create Google Credentials File
+        run: |
+          cat << 'EOF' > google_creds.json
+          ${{ secrets.GOOGLE_CRD }}
+          EOF
+
+      - name: Execute Archiver Run
+        run: |
+          auto-archiver --config orchestration.yaml
