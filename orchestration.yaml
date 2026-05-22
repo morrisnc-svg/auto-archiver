@@ -7,6 +7,9 @@ steps:
     - name: yt_dlp_extractor
     - name: screenshot_extractor
 
+  enrichers:
+    - name: hash_enricher
+
   storages:
     - name: google_drive_storage
       folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
