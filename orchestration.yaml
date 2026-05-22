@@ -5,7 +5,7 @@ steps:
     - generic_extractor
   enrichers:
     - hash_enricher
-    - screenshot_enricher
+    - antibot_extractor_enricher
   formatters:
     - html_formatter
   databases:
