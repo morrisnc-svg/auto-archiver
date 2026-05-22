@@ -1,13 +1,12 @@
-feeder:
-  name: gsheet_feeder
-  sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
-
-storage:
-  name: google_drive_storage
-  folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
-
-# This section tells the newer engine what tasks to perform on the links
 steps:
+  feeders:
+    - name: gsheet_feeder
+      sheet_id: "1jqtc_ysHUha01XZ3eLuWyQ0-pJpjznHA3uJT7SfvX7I"
+
   extractors:
     - name: yt_dlp_extractor
     - name: screenshot_extractor
+
+  storages:
+    - name: google_drive_storage
+      folder_id: "1gmk6bWbAg6oGhCLtC_Tq96WxanqTZD8Q"
