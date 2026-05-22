@@ -10,6 +10,9 @@ steps:
   enrichers:
     - name: hash_enricher
 
+  formatters:
+    - name: html_formatter
+
   databases:
     - name: gsheet_feeder_db
 
